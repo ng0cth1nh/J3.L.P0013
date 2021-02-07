@@ -11,7 +11,7 @@ package model;
  */
 public class Media {
     private int id;
-    private String name,icon,link;
+    private String name,icon,link,test;
 
     public Media() {
     }
@@ -22,6 +22,16 @@ public class Media {
         this.icon = icon;
         this.link = link;
     }
+
+    public String getTest() {
+        return test;
+    }
+
+    public void setTest(String test) {
+        this.test = test;
+    }
+    
+    
 
     public int getId() {
         return id;
