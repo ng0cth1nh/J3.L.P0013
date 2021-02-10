@@ -4,9 +4,25 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>controller.HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MenuServlet</servlet-name>
+        <servlet-class>controller.MenuServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FindUsServlet</servlet-name>
+        <servlet-class>controller.FindUsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MenuServlet</servlet-name>
+        <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindUsServlet</servlet-name>
+        <url-pattern>/find-us</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

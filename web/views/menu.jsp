@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : Feb 8, 2021, 9:47:44 PM
+    Document   : menu
+    Created on : Feb 10, 2021, 9:57:07 PM
     Author     : Vu Ngoc Thinh
 --%>
 
@@ -10,39 +10,35 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>The Sushi Restaurant</title>
+        <title>Menu</title>
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
-        <link href="css/home.css" rel="stylesheet" type="text/css"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <c:set var="media" scope="request" value="${requestScope.media}"/>
-        <c:set var="sushis" scope="request" value="${requestScope.sushis}"/>
-        <c:set var="defaultSushi" scope="request" value="${requestScope.defaultSushi}"/>
-        <div class="container">
+        <c:set var="menus" scope="request" value="${requestScope.menus}"/>
+        <div class="container">      
             <%@include file="header.jsp"%>
             <div class="main-container">
                 <div class="left-main-container">
-                    <div class="top-section">
-                        <div id="default-sushi-infor" class="sushi-infor">
-                            <img id="default-sushi" src="${defaultSushi.getPhoto()}"/>
-                        </div>
-
-                    </div>
-                    <div class="bottom-section">
-                        <c:forEach items="${sushis}" var="sushi">
-                            <div class="sushi-infor">
-                                <h3 class="sushi-title">${sushi.getTitle()}</h3>
-                                <div class="sushi-wrapper">
-                                    <img class="sushi-photo" src="${sushi.getPhoto()}"/>
-                                    <p class="sushi-description">${sushi.getDescription()}</p>
+                    <h1 id="menu-tag">Menu and Price list</h1>
+                    <ul class="menu-wrapper">
+                        <c:forEach items="${menus}" var="menu">
+                            <li class="menu-item">
+                                <div class="menu-content menu-label">
+                                    <span class="menu-name-label">${menu.getName()}</span>
+                                    <span class="menu-price-label">Price</span>
                                 </div>
-                            </div>  
-                        </c:forEach>
-
-                    </div>
+                                <div class="menu-content">
+                                    <span class="menu-name-label">${menu.getTitle()}</span>
+                                    <span class="menu-price-label">€${menu.getPrice()}</span>
+                                </div>
+                                <p class="menu-des">${menu.getDescription()}</p>
+                            </li>  
+                        </c:forEach>                       
+                    </ul>                   
                 </div>
                 <div class="right-main-container">
-
                     <div class="sidebar">
                         <h3 class="title-sidebar">
                             Share this page
@@ -54,14 +50,12 @@
                                     <a class="link-media" href="${m.getLink()}">${m.getName()}</a>
                                 </li>
                             </ul>
-
                         </c:forEach>
-
                     </div>
                 </div>
             </div>
-
-            <nav class="pagination-container">
+            
+             <nav class="pagination-container">
                 <ul class="pagination">
                     <c:forEach var="index" begin="1" end="${requestScope.totalPage}">
                         <c:choose>
@@ -69,7 +63,7 @@
                                 <li class="page-item page-item-active"><a class="page-link page-link-active" href="home?page=${index}">${index}</a></li> 
                                 </c:when>
                                 <c:otherwise>
-                                <li class="page-item"><a class="page-link" href="home?page=${index}">${index}</a></li>    
+                                <li class="page-item"><a class="page-link" href="menu?page=${index}">${index}</a></li>    
                                 </c:otherwise>
                             </c:choose>
 
@@ -77,9 +71,11 @@
 
                 </ul>
             </nav>
-                    
-               <%@include file="footer.jsp"%>          
+
+
+            <%@include file="footer.jsp"%>  
+
+
         </div>
-        
     </body>
 </html>

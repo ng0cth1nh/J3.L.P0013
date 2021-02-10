@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/J3LP0013">
-    <Environment name="mediaPath" type="java.lang.String" value="C:\Users\Vu Ngoc Thinh\OneDrive\Pictures\Screenshots\"/>
+    <Environment name="mediaPath" type="java.lang.String" value="images\"/>
 </Context>

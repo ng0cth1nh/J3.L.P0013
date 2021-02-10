@@ -16,6 +16,12 @@ public class Sushi {
     public Sushi() {
     }
 
+    public Sushi(String photo) {
+        this.photo = photo;
+    }
+    
+    
+
     public Sushi(int id, String title, String description, String photo) {
         this.id = id;
         this.title = title;
@@ -54,6 +60,12 @@ public class Sushi {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+
+    @Override
+    public String toString() {
+        return "Sushi{" + "id=" + id + ", title=" + title + ", description=" + description + ", photo=" + photo + '}';
+    }
+    
     
     
     

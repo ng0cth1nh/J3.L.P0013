@@ -6,21 +6,22 @@
 package controller;
 
 import dao.MediaDao;
-import dao.SushiDao;
+import dao.MenuDao;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Media;
-import model.Sushi;
+import model.Menu;
 
 /**
  *
  * @author Vu Ngoc Thinh
  */
-public class HomeServlet extends HttpServlet {
+public class MenuServlet extends HttpServlet {
 
     private static int PAGE_SIZE = 3;
 
@@ -50,29 +51,29 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+
             int pageIndex = 0;
             MediaDao mdao = new MediaDao();
-            SushiDao sdao = new SushiDao();
+            MenuDao menudao = new MenuDao();
             ArrayList<Media> mediaList = mdao.getMedia();
-            Sushi defaultSushi = sdao.getDefaultSushi();
             if (request.getParameter("page") == null) {
                 pageIndex = 1;
             } else {
                 pageIndex = Integer.parseInt(request.getParameter("page"));
             }
-            ArrayList<Sushi> sushiList = sdao.getSushis(pageIndex, PAGE_SIZE);
+
+            ArrayList<Menu> menuList = menudao.getMenus(pageIndex, PAGE_SIZE);
+
             request.setAttribute("pageIndex", pageIndex);
             request.setAttribute("totalPage", getTotalPage());
-            request.setAttribute("defaultSushi", defaultSushi);
-            request.setAttribute("sushis", sushiList);
+            request.setAttribute("menus", menuList);
             request.setAttribute("media", mediaList);
-            request.getRequestDispatcher("views/home.jsp").forward(request, response);
+            request.getRequestDispatcher("views/menu.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e);
-            request.getRequestDispatcher("views/home.jsp").forward(request, response);
+            request.getRequestDispatcher("views/menu.jsp").forward(request, response);
 
         }
-
     }
 
     /**
@@ -101,12 +102,12 @@ public class HomeServlet extends HttpServlet {
 
     public int getTotalPage() {
 
-        SushiDao sdao = new SushiDao();
-        int totalSushi = sdao.getTotalSushi();
-        if (totalSushi / PAGE_SIZE == 0) {
-            return totalSushi / PAGE_SIZE;
+        MenuDao mdao = new MenuDao();
+        int total = mdao.getTotalMenu();
+        if (total / PAGE_SIZE == 0) {
+            return total / PAGE_SIZE;
         } else {
-            return (totalSushi / PAGE_SIZE) + 1;
+            return (total / PAGE_SIZE) + 1;
         }
 
     }

@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 10, 2021, 10:05:28 PM
+    Author     : Vu Ngoc Thinh
+*/
+
+
+.container{
+    height: 2030px;
+    margin-bottom: 30px;
+}
+.main-container{
+    height: 1760px;
+}
+#default-sushi-infor{
+    height: 490px;
+    border-top:0;
+}
+.sushi-infor{
+    width: 705px;
+    height: 400px;
+    border-top: dotted 2px #c7c7c7; 
+}
+#default-sushi{
+
+    height: 468px;
+    border-radius: 10px;
+}
+.sushi-wrapper{
+    display: flex;
+}
+.sushi-photo{
+    width: 320px;
+    height: 320px;
+    border-radius: 10px;
+}
+.sushi-description{
+    margin-left: 25px;
+    margin-top: 0px;
+}

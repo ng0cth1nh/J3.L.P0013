@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Vu Ngoc Thinh
@@ -63,7 +65,8 @@ public class Menu {
     }
 
     public void setPrice(float price) {
-        this.price = price;
+        DecimalFormat df = new DecimalFormat("#.00");
+        this.price = Float.valueOf(df.format(price));
     }
 
 }

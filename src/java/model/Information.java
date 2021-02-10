@@ -19,9 +19,8 @@ public class Information {
     public Information() {
     }
     
-    
-
-    public Information(String name, String address, String telephone, String email, String opening, String map) {
+    public Information(String name, String address, String telephone,
+            String email, String opening, String map) {
         this.name = name;
         this.address = address;
         this.telephone = telephone;
@@ -77,7 +76,5 @@ public class Information {
     public void setMap(String map) {
         this.map = map;
     }
-    
-    
-    
+           
 }

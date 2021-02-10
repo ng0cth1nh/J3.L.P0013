@@ -1,0 +1,125 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 10, 2021, 9:59:35 PM
+    Author     : Vu Ngoc Thinh
+*/
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+body{
+    background-image: url("../images/wine.png");
+    background-color: #d5f46b;
+    background-repeat: repeat-x;
+    font-family: sans-serif;
+    margin: 0;
+    /* height: 2050px;*/
+
+
+}
+
+
+.container{
+    margin: 0 auto;
+    width: 980px;
+    /*   height: 2030px;*/
+    background-color: white;
+
+    box-shadow: 0 0 24px rgb(0 0 0 / 80%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+
+.main-container{
+    display: flex;
+    margin: 0;
+    /*height: 1760px;*/
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0 20px;
+    padding-top: 30px;
+}
+
+
+.left-main-container{
+    width: 75%;
+
+}
+.right-main-container{
+    width:  23%;
+    height: 160px;
+    border-radius: 10px;
+    box-shadow: 0 0 24px rgb(0 0 0 / 25%);
+}
+
+
+.sidebar{
+    height: 90%;
+    margin: 15px;
+
+}
+.title-sidebar{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+}
+.media-wrapper{
+    margin: 5px 0;
+    list-style: none;
+    padding: 0;
+    max-height: 24px;
+}
+
+.link-media{
+    color: black;
+    font-size: 14px;
+    text-decoration: underline;
+    margin: 0;
+    margin-left: 10px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+
+}
+
+
+.pagination-container{
+    margin: auto;
+}
+.pagination{
+    display: flex;
+    width: 50%;
+    list-style: none;
+    margin:0 auto;
+    padding: 0px;
+    justify-content: center;
+
+}
+.page-item{
+
+    border: solid 2px #303030;
+}
+.page-link{
+    font-size: 15px;
+    font-weight: 600;
+    color: #303030;
+}
+.page-item-active{
+    background-color:  #303030;
+
+}
+.page-link-active{
+    color: white;
+}
