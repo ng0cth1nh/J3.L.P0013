@@ -60,15 +60,15 @@
                     <c:forEach var="index" begin="1" end="${requestScope.totalPage}">
                         <c:choose>
                             <c:when test="${index == requestScope.pageIndex}">
-                                <li class="page-item page-item-active"><a class="page-link page-link-active" href="home?page=${index}">${index}</a></li> 
+                                <li class="page-item page-item-active">
+                                    <a class="page-link page-link-active" href="home?page=${index}">${index}</a>
+                                </li> 
                                 </c:when>
                                 <c:otherwise>
                                 <li class="page-item"><a class="page-link" href="menu?page=${index}">${index}</a></li>    
                                 </c:otherwise>
                             </c:choose>
-
                     </c:forEach>
-
                 </ul>
             </nav>
 

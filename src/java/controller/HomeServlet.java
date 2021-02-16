@@ -103,7 +103,7 @@ public class HomeServlet extends HttpServlet {
 
         SushiDao sdao = new SushiDao();
         int totalSushi = sdao.getTotalSushi();
-        if (totalSushi / PAGE_SIZE == 0) {
+        if (totalSushi % PAGE_SIZE == 0) {
             return totalSushi / PAGE_SIZE;
         } else {
             return (totalSushi / PAGE_SIZE) + 1;

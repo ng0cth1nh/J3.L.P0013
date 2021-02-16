@@ -8,7 +8,6 @@ package controller;
 import dao.MediaDao;
 import dao.MenuDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -51,7 +50,6 @@ public class MenuServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-
             int pageIndex = 0;
             MediaDao mdao = new MediaDao();
             MenuDao menudao = new MenuDao();
@@ -61,9 +59,7 @@ public class MenuServlet extends HttpServlet {
             } else {
                 pageIndex = Integer.parseInt(request.getParameter("page"));
             }
-
             ArrayList<Menu> menuList = menudao.getMenus(pageIndex, PAGE_SIZE);
-
             request.setAttribute("pageIndex", pageIndex);
             request.setAttribute("totalPage", getTotalPage());
             request.setAttribute("menus", menuList);
@@ -104,7 +100,7 @@ public class MenuServlet extends HttpServlet {
 
         MenuDao mdao = new MenuDao();
         int total = mdao.getTotalMenu();
-        if (total / PAGE_SIZE == 0) {
+        if (total % PAGE_SIZE == 0) {
             return total / PAGE_SIZE;
         } else {
             return (total / PAGE_SIZE) + 1;

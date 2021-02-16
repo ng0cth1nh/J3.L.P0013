@@ -9,11 +9,11 @@
 
 var path = window.location.pathname;
 console.log(path);
-if (path.includes("home")) {
-    document.getElementById("home").classList.add("active");
+if (path.includes("find-us")) {
+    document.getElementById("find-us").classList.add("active");
 } else if (path.includes("menu")) {
     document.getElementById("menu").classList.add("active");
 } else {
-    document.getElementById("find-us").classList.add("active");
+    document.getElementById("home").classList.add("active");
 }
 
