@@ -1,2 +1,2 @@
 # J3LP0013
-Online Quiz from JAVA WEB lab at FPT University.
+The Sushi Restaurant from JAVA WEB lab at FPT University.
